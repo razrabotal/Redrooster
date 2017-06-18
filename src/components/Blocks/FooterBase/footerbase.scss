@@ -1,0 +1,47 @@
+@import "src/styles/variables";
+
+.footer {
+  display: flex;
+  margin-bottom: 24px;
+  &-logo {
+
+  }
+  &-lists {
+    margin-left: 8%;
+    &._right {
+      margin-left: auto;
+    }
+  }
+  &-list {
+    margin-bottom: 24px;
+    line-height: 24px;
+  }
+  &-title {
+    font-family: Roboto Mono, Lucida Console, Monaco, monospace;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 16px;
+    color: #8d8d8d;
+  }
+  &-social {
+    &:not(:last-child) {
+      margin-right: 16px;
+    }
+  }
+
+  @include for-phone() {
+    display: block;
+  }
+}
+
+.footerBottom {
+  font-family: Roboto Mono, Lucida Console, Monaco, monospace;
+  font-weight: 400;
+  font-size: 14px;
+  color: #8d8d8d;
+  padding-bottom: 96px;
+  > * {
+    display: block;
+  }
+}

@@ -1,0 +1,27 @@
+<nav class="categoryNav">
+  <div class="-center">
+    <div class="categoryNav-container">
+      <div class="categoryNav-list">
+        <router-link v-if="filteredCategories.length"
+                     class="categoryNav-list--item"
+                     v-for="(category, index) in filteredCategories"
+                     :key="index"
+                     :data-index="index"
+                     :to="{ name: 'category', params: { id: category.id }}"
+                     v-on:click.native="$emit('reboot')">
+
+          {{category.title}}
+        </router-link>
+
+      </div>
+
+      <div class="categoryNav-list">
+        <router-link class="categoryNav-list--item"
+                     :to="{ name: 'subscriptions'}">
+          Subscriptions
+        </router-link>
+
+      </div>
+    </div>
+  </div>
+</nav>

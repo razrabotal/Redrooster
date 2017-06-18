@@ -1,0 +1,40 @@
+/* VARIABLES */
+
+$for-phone: 600px!default;
+$for-tablet: 900px!default;
+$for-big: 1600px!default;
+
+$color-link:black!default;
+$color-hover:#444!default;
+
+$c-yellow: #f7e9cc;
+$c-blue: #d3f2f4;
+$c-green: #daf4ce;
+
+$font: -apple-system, Arial, sans-serif!default;
+$font2: Adelle Sans, Helvetica Neue, Helvetica, sans-serif;
+
+/* ADAPTIVE */
+@mixin not-for-phone($size: 600px)  {
+  @media (min-width: $for-phone) { @content; }
+}
+@mixin for-phone($size: 600px)  {
+  @media (max-width: $for-phone) { @content; }
+}
+@mixin for-tablet($size: 900px)  {
+  @media (max-width: $for-tablet) { @content; }
+}
+@mixin for-big($size: 1600px)  {
+  @media (min-width: $for-big) { @content; }
+}
+
+/* HELP-CLASSES */
+@mixin center($max-width: 1200px)  {
+  .-center {
+    max-width: $max-width;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left:10px;
+    padding-right: 10px;
+  }
+}

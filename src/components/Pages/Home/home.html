@@ -1,0 +1,55 @@
+<div class="page">
+
+  <header>
+    <HeaderTop></HeaderTop>
+    <HeaderBase :cartitems="cartitems" @open="$emit('open')"></HeaderBase>
+  </header>
+
+
+  <main>
+
+    <div class="-mainBase">
+      <div class="-center grid" style="margin-top: 64px;">
+        <div class="-flex -_between grid-header">
+          <div class="grid-logo">
+            <img src="https://s3.amazonaws.com/redroostercoffee/coffees.png?mtime=20161009235137" alt="">
+          </div>
+          <div class="-mbb">
+            <a href="/shop/1">Shop all coffees →</a>
+          </div>
+        </div>
+
+        <Item maxindex="6" category="1"></Item>
+
+      </div>
+
+      <div class="-center -mbbb">
+        <Callout></Callout>
+      </div>
+
+      <div class="-center grid">
+        <div class="-flex -_between grid-header">
+          <div class="grid-logo">
+            <img src="https://s3.amazonaws.com/redroostercoffee/merchandise.png?mtime=20161009235151" alt="">
+          </div>
+          <div class="-mbb">
+            <a href="/shop/3">Shop all merchandise →</a>
+          </div>
+        </div>
+
+        <Item maxindex="3" category="3"></Item>
+      </div>
+
+      <div class="shopButton">
+        <a class=" nolink" href="/shop/subscriptions">
+          <button class="btn _default">Shop Online Store</button>
+        </a>
+      </div>
+
+      <CalloutFull></CalloutFull>
+
+    </div>
+  </main>
+
+  <FooterBase></FooterBase>
+</div>

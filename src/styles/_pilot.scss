@@ -1,0 +1,258 @@
+@import "variables";
+
+
+
+/* RESET */
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+  font-family: $font;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+  &:before, &:after {
+    content: '';
+  	content: none;
+  }
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+header, nav, main, footer {
+  width: 100%;
+}
+
+/* NORMALIZE */
+
+img{
+  max-width: 100%;
+}
+
+/* Margin bottom helper */
+.-mb {
+  margin-bottom: 10px;
+}
+
+.-mbb {
+  margin-bottom: 20px;
+}
+
+.-mbbb {
+  margin-bottom: 40px;
+}
+
+/* Flex helper */
+.-flex {
+  display: flex;
+  > *:not(:last-child) {
+    margin-right: 30px;
+  }
+  &.-_flex1 {
+    > * {
+      flex:1;
+    }
+  }
+  &.-_between {
+    justify-content: space-between;
+  }
+  &.-_lastRight {
+    > *:last-child {
+      margin-left: auto;
+    }
+  }
+  &.-_margin0 {
+    > * {
+      margin:0;
+    }
+  }
+}
+
+/* LINKS */
+
+a, .link {
+  text-decoration: none;
+  color: CurrentColor;
+  &:hover {
+    color:$color-hover;
+    cursor: pointer;
+  }
+}
+.links {
+  &-blue {
+    &, & a, & .link {
+      color:$color-link;
+    }
+  }
+  &-light {
+    &, & a, & .link {
+      background-image: linear-gradient(180deg, CurrentColor 40%, transparent 100%);
+    }
+  }
+  &-blue, &-light {
+    &:hover .link {
+      color:$color-hover;
+    }
+  }
+}
+.nolink, .nolink:visited, .nolink:hover {
+  color:CurrentColor;
+  background-size:0;
+  .link {
+    background-size:1px 1px;
+  }
+}
+
+/* Hamburger menu */
+
+.menu-icon  {
+  color: currentColor;
+  margin: 10px auto;
+  &, &:before, &:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 1px;
+    left: 0;
+    right: 0;
+    background-color: currentColor;
+    transition: top 0.1s 0.2s, transform 0.2s;
+    transform: translateZ(0);
+  }
+  &:before {
+    top: -7px;
+  }
+  &:after {
+    top: 7px;
+  }
+}
+.nav._open .menu-icon{
+  background: none;
+  &:before {
+    top: 0;
+    transform: rotate(45deg);
+    transition: top 0.1s, transform 0.1s 0.1s;
+  }
+  &:after {
+    top: 0;
+    transform: rotate(-45deg);
+    transition: top 0.1s, transform 0.1s 0.1s;
+  }
+}
+
+
+/* Arrow icon */
+
+.arrowDown-icon  {
+  position: absolute;
+  right: 0;
+  display: inline-block;
+  vertical-align: middle;
+  width: 12px;
+  height: 12px;
+  top: 14px;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 8px;
+    height: 1px;
+    background: CurrentColor;
+    transform: rotate(45deg);
+    transition: 0.2s;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 5px;
+    display: block;
+    width: 8px;
+    height: 1px;
+    background: CurrentColor;
+    transform: rotate(-45deg);
+    transition: 0.2s;
+  }
+}
+
+/* PRINT */
+
+@media print {
+	*,
+	*:before,
+	*:after,
+	p:first-letter,
+	p:first-line {
+		color: #000 !important;
+		box-shadow: none !important;
+		text-shadow: none !important;
+	}
+
+	a,
+	a:visited {
+		text-decoration: underline;
+	}
+
+	abbr[title]:after {
+		content: ' (' attr(title) ')';
+	}
+
+	pre,
+	blockquote {
+		border: 1px solid #999;
+		page-break-inside: avoid;
+	}
+
+	thead {
+		display: table-header-group;
+	}
+
+	tr,
+	img {
+		page-break-inside: avoid;
+	}
+
+	p,
+	h2,
+	h3 {
+		orphans: 3;
+		widows: 3;
+	}
+
+	h2,
+	h3 {
+		page-break-after: avoid;
+	}
+}

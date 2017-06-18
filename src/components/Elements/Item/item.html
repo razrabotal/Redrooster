@@ -1,0 +1,34 @@
+<div class="grid-main">
+  <router-link v-for="(post, index) in filteredPosts"
+               v-if="filteredPosts.length && post.title !== 'yo'"
+               class="item"
+               :key="index"
+               :data-index="index"
+               :to="{ name: 'post', params: { id: category, idc: idc, idp: post.id }}">
+
+    <figure class="item-img" :class="{'_blue': category == 3, '_green': category == 2}">
+      <img :src="post.img" alt="">
+    </figure>
+    <p class="item-title">{{post.title}}</p>
+    <div class="item-price">
+      <div class="item-price--def">{{post.price}}</div>
+    </div>
+
+  </router-link>
+
+  <div class="item" v-else>
+    <div class="sale">
+      <img class="sale-img" src="https://redroostercoffee.com/assets/3c8eb49bd3622ade5bc545dc2949246b.svg" alt="">
+      <div class="sale-container">
+        <h2 class="sale-title">Get $5 off!</h2>
+        <div class="sale-text">
+          <p>Subscribe to the Red Rooster newsletter and receive a coupon on your next order! No spam, we promise! </p>
+        </div>
+        <form class="sale-form" action="">
+          <input type="text" class="inp _w100" placeholder="email adress">
+          <input type="button" class="btn _group" value="Get my coupon">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

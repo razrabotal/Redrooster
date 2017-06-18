@@ -1,0 +1,52 @@
+<div class="page">
+
+  <HeaderBase :cartitems="cartitems" @open="$emit('open')"></HeaderBase>
+
+  <ShopNav @reboot="reboot()"></ShopNav>
+
+  <main>
+
+    <div class="-mainBase">
+      <div class="category -center">
+        <aside class="category-aside">
+          <div class="category-header">
+            <h1>Roasts & Origins</h1>
+
+
+          </div>
+
+          <div class="category-list">
+            <a :class="{'active': !this.$route.params.idc}" :href="'/shop/'+ $route.params.id" class="category-list--item">All</a>
+            <router-link v-if="filteredSubCategories.length"
+                         class="category-list--item"
+                         v-for="(subcategory, index) in filteredSubCategories"
+                         :key="index"
+                         :data-index="index"
+                         :to="{ name: 'subcategory', params: { idc: subcategory.id }}"
+                         v-on:click.native="reboot()">
+
+              {{subcategory.title}}
+            </router-link>
+
+          </div>
+        </aside>
+        <div class="category-main">
+          <div class="category-header">
+            <ul class="-flex">
+              <li><a href="">{{ cat.title }}</a></li>
+              <li><a href="">{{ subcat.title }}</a></li>
+            </ul>
+          </div>
+          <div class="grid">
+            <Item sale="true" maxindex="100" :category="cat.id"></Item>
+          </div>
+        </div>
+      </div>
+
+
+      <CalloutFull></CalloutFull>
+    </div>
+  </main>
+
+  <FooterBase></FooterBase>
+</div>

@@ -1,0 +1,28 @@
+.calloutFull {
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+  background-size: cover;
+  background-position: 50%;
+  padding: 88px 16px;
+  margin-bottom: 80px;
+  margin-top: 40px;
+  overflow: hidden;
+  &-text {
+    position: relative;
+    max-width: 736px;
+    margin: auto;
+    border: 1px solid #000;
+    padding: 48px 24px;
+    text-align: center;
+    background: #fff;
+    a {
+      color: #8d8d8d;
+    }
+  }
+  &-sticker {
+    position: absolute;
+    top: 0;
+    right: -100px;
+    transform: scale(.5) translateY(-100%)
+  }
+}

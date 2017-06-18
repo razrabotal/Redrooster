@@ -1,0 +1,91 @@
+@import "styles/pilot";
+@import "styles/fonts";
+// npm depencies
+//@import "~bootstrap/scss/bootstrap";
+@import "~font-awesome/scss/font-awesome";
+
+
+@import "styles/inputs";
+
+header {
+  overflow: hidden;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: Adelle Sans, Helvetica Neue, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #272121;
+  background: #000;
+}
+
+.-flex {
+  @include for-phone() {
+    display: block;
+  }
+}
+
+.container {
+  background: #fff;
+  position: relative;
+  left: 0;
+  transition: .6s cubic-bezier(.8, .01, .15, .99), opacity 0.3s ease-out;
+}
+
+h1 {
+  font-weight: 400;
+}
+h2 {
+  font: 400 36px/48px Gothic, Impact, Charcoal, sans-serif;
+}
+
+h1._bagnard {
+  font-family: Bagnard Sans, Lucida Sans Unicode, Lucida Grande, serif;
+  font-weight: 400;
+  color: #272121;
+  font-size: 38px;
+  line-height: 48px
+}
+h2._bagnard {
+  font-family: Bagnard Sans, Lucida Sans Unicode, Lucida Grande, serif;
+  font-weight: 400;
+  color: #272121;
+
+  font-size: 24px;
+  line-height: 32px
+}
+
+
+hr {
+  height: 1px;
+  border:0;
+  background: rgba(#000, .2);
+  margin: 0;
+}
+
+.grid {
+  padding: 0;
+  margin-bottom: 56px;
+  &-header {
+    display: flex;
+    position: relative;
+    padding: 0 15px;
+  }
+  &-main {
+    display: flex;
+    flex-wrap: wrap;
+    @include for-phone() {
+      display: block;
+    }
+  }
+  &-logo img{
+    position: absolute;
+    z-index: 10;
+    top: -16px;
+    left: 32px;
+    max-width: 104px;
+  }
+}

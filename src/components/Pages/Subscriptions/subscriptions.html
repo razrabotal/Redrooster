@@ -1,0 +1,256 @@
+<div class="page">
+  <HeaderBase :cartitems="cartitems" @open="$emit('open')"></HeaderBase>
+
+  <ShopNav></ShopNav>
+
+  <main>
+
+    <div class="-mainBase">
+<div class="subscriptions">
+      <div class="-center">
+
+          <div class="subscriptions-top">
+            <h1 class="_bagnard">
+              Subscriptions
+            </h1>
+            <div class="-mbb">
+              <big>Red Rooster offers an easy way to enjoy our coffee in your home. Select from the choices below and we'll send it right to your door, shipping included.</big>
+            </div>
+
+            <div class="-mbb">
+              <p>Contact us for specific preference requests.</p>
+              <p>540-745-7338 — info@redroostercoffeeroaster.com</p>
+            </div>
+
+            <div class="-mbb">
+              <p>Questions?</p>
+              <p>Subscription FAQs</p>
+            </div>
+          </div>
+        </div>
+
+      <hr>
+
+      <div class="-center">
+        <h2 class="_bagnard">How much coffee do you need?</h2>
+
+        <div class="subscriptions-inputs">
+          <div class="subscriptions-input">
+            <label for="coffe1">
+              <input v-model="bags" id="coffe1" name="coffe" type="radio" value="1 Bag">
+              <div class="subscriptions-input--block">
+                <img src="https://redroostercoffee.com/assets/f280c49ce8f24e1e081159c716c3f0c2.png" alt="">
+                <span>(One) 12oz. Bag</span>
+              </div>
+            </label>
+          </div>
+
+          <div class="subscriptions-input">
+            <label for="coffe2">
+              <input v-model="bags" id="coffe2" name="coffe" type="radio" value="2 Bags">
+              <div class="subscriptions-input--block">
+                <img src="https://redroostercoffee.com/assets/0d06c9a7812a0a2ec2becdb09d02da15.png" alt="">
+                <span>(Two) 12oz. Bags</span>
+              </div>
+            </label>
+          </div>
+
+          <div class="subscriptions-input">
+            <label for="coffe3">
+              <input v-model="bags" id="coffe3" name="coffe" type="radio" value="3 Basg">
+              <div class="subscriptions-input--block">
+                <img src="https://redroostercoffee.com/assets/f48efa71034dba5cba088145ad10911f.png" alt="">
+                <span>(Three) 12oz. Bags</span>
+              </div>
+            </label>
+          </div>
+
+          <div class="subscriptions-input">
+            <label for="coffe4">
+              <input v-model="bags" id="coffe4" name="coffe" type="radio" value="4 Bags">
+              <div class="subscriptions-input--block">
+                <img src="https://redroostercoffee.com/assets/1c010ee8815d7af4057e5c1acf4d4562.png" alt="">
+                <span>(Four) 12oz. Bags</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+
+        <h2 class="_bagnard">How often do you need it?</h2>
+
+        <div class="subscriptions-select">
+          I want {{bags}} delivered every
+          <div class="select">
+            <select v-model="frequency" class="inp" name="" id="">
+              <option value="2 Weeks">2 Weeks</option>
+              <option value="4 Weeks">4 Weeks</option>
+            </select>
+            <img class="select-arrow" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSI1IiB2aWV3Qm94PSIwIDAgOCA1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0zLjkyOSA1bC0zLjkyOS01aDcuODU3eiIgZmlsbD0iIzAwMCIvPjwvc3ZnPg==">
+          </div>
+        </div>
+
+
+        <h2 class="_bagnard">How would you like it ground?</h2>
+
+        <div class="subscriptions-inputs _noMargin">
+          <div class="subscriptions-input">
+            <label for="variant1">
+              <input v-model="ground" value="Wholebean" id="variant1" name="variant" type="radio">
+              <div class="subscriptions-input--block">
+                <span>Wholebean</span>
+              </div>
+            </label>
+          </div>
+
+          <div class="subscriptions-input">
+            <label for="variant2">
+              <input v-model="ground" value="Espresso" id="variant2" name="variant" type="radio">
+              <div class="subscriptions-input--block">
+                <span>Espresso</span>
+              </div>
+            </label>
+          </div>
+
+          <div class="subscriptions-input">
+            <label for="variant3">
+              <input v-model="ground" value="Fine" id="variant3" name="variant" type="radio">
+              <div class="subscriptions-input--block">
+                <span>Fine</span>
+              </div>
+            </label>
+          </div>
+
+          <div class="subscriptions-input">
+            <label for="variant4">
+              <input v-model="ground" value="Drip" id="variant4" name="variant" type="radio">
+              <div class="subscriptions-input--block">
+                <span>Drip</span>
+              </div>
+            </label>
+          </div>
+
+          <div class="subscriptions-input">
+            <label for="variant5">
+              <input v-model="ground" value="Chemex" id="variant5" name="variant" type="radio">
+              <div class="subscriptions-input--block">
+                <span>Chemex</span>
+              </div>
+            </label>
+          </div>
+
+          <div class="subscriptions-input">
+            <label for="variant6">
+              <input v-model="ground" value="Coarse" id="variant6" name="variant" type="radio">
+              <div class="subscriptions-input--block">
+                <span>Coarse</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+
+
+        <h2 class="_bagnard">Which coffee selection do you prefer?</h2>
+
+        <div class="subscriptions-inputs">
+          <div class="subscriptions-input">
+            <label for="prefer1">
+              <input v-model="prefer" :value="{value:'Blends', price: 17}" id="prefer1" name="prefer" type="radio">
+              <div>
+                <div class="subscriptions-input--block _miniText">
+                  <img src="https://red-rooster-shopify.imgix.net/s/files/1/1421/4994/products/blends.png?v=1475944395&auto=format,compress&q=80&h=400" alt="">
+                  <span>Blends</span>
+                </div>
+                <div class="subscriptions-input--bottom">
+                  $17 Subscribe
+                </div>
+              </div>
+            </label>
+          </div>
+
+          <div class="subscriptions-input">
+            <label for="prefer2">
+              <input v-model="prefer" :value="{value:'Blends + Single Origin', price: 18}" id="prefer2" name="prefer" type="radio">
+              <div>
+                <div class="subscriptions-input--block _miniText">
+                  <img src="https://red-rooster-shopify.imgix.net/s/files/1/1421/4994/products/blends_single.png?v=1475944581&auto=format,compress&q=80&h=400" alt="">
+                  <span>Blends + Single Origin</span>
+                </div>
+                <div class="subscriptions-input--bottom">
+                  $18 Subscribe
+                </div>
+              </div>
+            </label>
+          </div>
+
+          <div class="subscriptions-input">
+            <label for="prefer3">
+              <input v-model="prefer" :value="{value:'Single Origin', price: 18}" id="prefer3" name="prefer" type="radio">
+              <div>
+                <div class="subscriptions-input--block _miniText">
+                  <img src="https://red-rooster-shopify.imgix.net/s/files/1/1421/4994/products/single.png?v=1475944768&auto=format,compress&q=80&h=400" alt="">
+                  <span>Single Origin</span>
+                </div>
+                <div class="subscriptions-input--bottom">
+                  $18 Subscribe
+                </div>
+              </div>
+            </label>
+          </div>
+
+          <div class="subscriptions-input">
+            <label for="prefer4">
+              <input v-model="prefer" :value="{value:'Milepost and Microlot', price: 20}" id="prefer4" name="prefer" type="radio">
+              <div>
+                <div class="subscriptions-input--block _miniText">
+                  <img src="https://red-rooster-shopify.imgix.net/s/files/1/1421/4994/products/microlot.png?v=1475944263&auto=format,compress&q=80&h=400" alt="">
+                  <span>Milepost and Microlot</span>
+                </div>
+                <div class="subscriptions-input--bottom">
+                  $20 Subscribe
+                </div>
+                <img src="https://redroostercoffee.com/assets/fa29142bc4266cc01965b0d70c481dea.svg" alt="" class="subscriptions-input--img">
+              </div>
+            </label>
+          </div>
+        </div>
+
+
+        <div class="shopButton">
+          <a class=" nolink" href="/shop/1/1">
+            <button class="btn _default">Or Shop Individual Blends</button>
+          </a>
+        </div>
+
+        <div class="subscriptions-price">
+          <div class="subscriptions-price--dollar">
+            $
+          </div>
+          <div class="subscriptions-price--main">
+            {{prefer.price}}
+          </div>
+          <div class="subscriptions-price--frequency">
+            / {{frequency}}
+          </div>
+        </div>
+
+        <div class="subscriptions-buy">
+          <button class="btn _addTo">
+            I want {{bags}} of {{prefer.value}}({{ground}}) delivered to me every {{frequency}}.
+            <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjEycHgiIGhlaWdodD0iMTlweCIgdmlld0JveD0iMCAwIDEyIDE5IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPCEtLSBHZW5lcmF0b3I6IFNrZXRjaCAzOSAoMzE2NjcpIC0gaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoIC0tPgogICAgPHRpdGxlPlRyaWFuZ2xlIDE8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZGVmcz48L2RlZnM+CiAgICA8ZyBpZD0iU3Vic2NyaXB0aW9uIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTA2OS4wMDAwMDAsIC0yMzU4LjAwMDAwMCkiIGlkPSJTdWJtaXQiIGZpbGw9IiNGRkZGRkYiPgogICAgICAgICAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1My4wMDAwMDAsIDIzMDQuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8cG9seWdvbiBpZD0iVHJpYW5nbGUtMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTAyMS42NDI4NTcsIDYzLjUwMDAwMCkgc2NhbGUoLTEsIC0xKSByb3RhdGUoLTkwLjAwMDAwMCkgdHJhbnNsYXRlKC0xMDIxLjY0Mjg1NywgLTYzLjUwMDAwMCkgIiBwb2ludHM9IjEwMjEuNjQyODYgNTggMTAzMC4yODU3MSA2OSAxMDEzIDY5Ij48L3BvbHlnb24+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==" data-reactid="275">
+          </button>
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+    <CalloutFull></CalloutFull>
+  </div>
+</main>
+
+<FooterBase></FooterBase>
+</div>

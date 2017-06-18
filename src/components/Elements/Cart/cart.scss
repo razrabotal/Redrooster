@@ -1,0 +1,232 @@
+@import "src/styles/variables";
+
+$cart-width: 500px;
+
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: calc(100% + #{$cart-width});
+  @include for-phone() { width: 200vw; }
+
+  height: 100vh;
+  transition: .6s cubic-bezier(.8, .01, .15, .99), opacity 0.3s ease-out;
+
+
+  margin-left: -$cart-width;
+  @include for-phone() { margin-left: -100vw; }
+
+  &.active {
+    & + .container {
+      position: relative;
+      left: -$cart-width;
+      height: 100vh;
+      overflow: hidden;
+      @include for-phone() {
+        left: -100vw;
+      }
+    }
+  }
+}
+
+.modal-wrapper {
+
+}
+
+
+.modal-overlay {
+  position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+background-color: rgba(0, 0, 0, 0.75);;
+z-index: 0
+}
+
+.modal-container {
+
+  padding: 48px 36px;
+  width: $cart-width;
+  @include for-phone() { width: 100vw; }
+
+  position: relative;
+  z-index: 1;
+/* margin: 0px auto; */
+margin-left: auto;
+height:100vh;
+
+background: #000;
+color: #fff;
+
+overflow-y: auto;
+
+}
+
+.modal-header h3 {
+  margin-top: 0;
+  color: #42b983;
+}
+
+.modal-body {
+  margin: 20px 0;
+}
+
+.modal-default-button {
+  float: right;
+}
+
+/*
+ * The following styles are auto-applied to elements with
+ * transition="modal" when their visibility is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the modal transition by editing
+ * these styles.
+ */
+
+
+.modal-enter, .modal-leave-to {
+opacity: 0;
+left:$cart-width;
+@include for-phone() { left: 100vw; }
+  & + .container {
+    left: 0px!important;
+  }
+}
+
+.modal-enter-to, .modal-leave {
+opacity: 1;
+left:0px;
+  & + .container {
+    left: -$cart-width;
+    @include for-phone() { left: -100vw; }
+  }
+}
+
+
+.cart {
+  &-title {
+    font-family: Roboto Mono, Lucida Console, Monaco, monospace;
+font-weight: 400;
+font-size: 14px;
+line-height: 24px;
+  }
+  &-close {
+    font-family: Roboto Mono, Lucida Console, Monaco, monospace;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #8d8d8d;
+  }
+
+  p {
+    color: #8d8d8d;
+  }
+
+  &-subtotal {
+    display: flex;
+    justify-content: space-between;
+    color:#fff;
+    font-family: Roboto Mono, Lucida Console, Monaco, monospace;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+
+    margin: 24px 0;
+  }
+
+  &-textarea {
+    display: block;
+    width: 100%;
+
+    background: none;
+    color: #fff;
+
+    font-family: Roboto Mono, Lucida Console, Monaco, monospace;
+    font-size: 16px;
+    line-height: 24px;
+
+    padding: 12px 16px;
+    border: 1px solid #fff;
+
+    height: 96px;
+    resize: none;
+
+    margin-bottom: 24px;
+  }
+  &-submit {
+    display: block;
+    font-size: 18px;
+    text-align: center;
+    img {
+      margin-left: 8px;
+    }
+  }
+}
+
+.cartItem {
+  display: flex;
+  padding: 48px 0;
+  border-bottom: 1px solid #fff;
+  &:first-child {
+    border-top: 1px solid #fff;
+  }
+  &-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: auto;
+  }
+  &-bottom, &-top {
+    display: flex;
+    justify-content: space-between;
+  }
+  &-img {
+    background: $c-yellow;
+    padding: 8px;
+    max-height: 120px;
+    object-fit: contain;
+    margin-right: 40px;
+    &._green {
+      background: $c-green;
+    }
+    &._blue {
+      background: $c-blue;
+    }
+  }
+  &-title {
+    font-weight: 400;
+    line-height: 24px;
+    font-size: 18px;
+    color: #fff;
+  }
+  &-removeButton {
+    background: none;
+    border: 0;
+  }
+  &-quantity {
+    button {
+      background: none;
+      border: 0;
+      color: #8d8d8d;
+    }
+    input {
+      background: none;
+      border: 0;
+      border-bottom: 1px dashed #8d8d8d;
+      color: #fff;
+      width: 24px;
+      text-align: center;
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+  &-price {
+    font-family: Roboto Mono, Lucida Console, Monaco, monospace;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+  }
+}

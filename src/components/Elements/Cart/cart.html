@@ -1,0 +1,62 @@
+<transition name="modal">
+    <div class="modal-mask" >
+      <div class="modal-wrapper" >
+
+        <div class="modal-overlay" @click="$emit('close')"></div>
+        <div class="modal-container cart">
+
+          <div class="modal-header">
+            <slot name="header">
+              <div class="-flex -_lastRight -mbb">
+                <h2 class="cart-title">
+                  Your Cart
+                </h2>
+                <span class="cart-close modal-default-button" @click="$emit('close')">
+                  close
+                </span>
+              </div>
+              <p>☺︎ Free shipping on orders $50 and up!</p>
+            </slot>
+          </div>
+
+          <div class="modal-body">
+            <slot name="body">
+              <div v-for="(post, index) in result" class="cart-item cartItem">
+                <img class="cartItem-img" :class="{'_blue': post.categoryId == 3, '_green': post.categoryId == 2}" :src="post.img" alt="">
+                <div class="cartItem-info">
+                  <div class="cartItem-top">
+                    <div class="cartItem-title">{{post.title}}</div>
+                    <button class="cartItem-removeButton"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+R3JvdXA8L3RpdGxlPjxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPjxnIHN0cm9rZT0iI2ZmZiIgZmlsbD0ibm9uZSI+PHBhdGggZD0iTS41LjVsMTQuNTA5IDE0LjUwOU0xNS41LjVsLTE0LjUwOSAxNC41MDkiLz48L2c+PC9zdmc+"></button>
+                  </div>
+                  <div class="cartItem-bottom">
+                    <div class="cartItem-quantity">
+                      <button @click="post.count--"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNyIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDcgMTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHRpdGxlPlByaWNlIENvcHkgMjwvdGl0bGU+PGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+PHBhdGggZmlsbD0iIzhEOEQ4RCIgZD0iTTMuNTAzIDExLjg0OGwyLjk1My0yLjk1M2gtMi40NDd2LTguMDEyaC0xLjAxMnY4LjAxMmgtMi40NDd6Ii8+PC9zdmc+"></button>
+                      <input type="text" v-model="post.count" :value="post.count" >
+                      <button @click="post.count++"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNyIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDcgMTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHRpdGxlPlByaWNlIENvcHkgMjwvdGl0bGU+PGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+PHBhdGggZmlsbD0iIzhEOEQ4RCIgZD0iTTMuNTAzLjg4MmwyLjk1MyAyLjk1M2gtMi40NDd2OC4wMTJoLTEuMDEydi04LjAxMmgtMi40NDd6Ii8+PC9zdmc+"></button>
+                    </div>
+                    <div class="cartItem-price">
+                      ${{(post.price * post.count).toFixed(2)}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cart-subtotal">
+                <div>Subtotal</div>
+                <div>${{total}}</div>
+              </div>
+              <p style="text-align:right;">Shipping calculated at checkout</p>
+            </slot>
+          </div>
+
+          <div class="modal-footer">
+            <slot name="footer">
+              <textarea class="cart-textarea" placeholder="Your message" name="" id="" >
+
+              </textarea>
+              <a class="cart-submit btn _group" href="/">Go to Checkout<img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSIxMSIgdmlld0JveD0iMCAwIDggMTEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHRpdGxlPlRyaWFuZ2xlIDE8L3RpdGxlPjxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPjxwYXRoIGQ9Ik03LjI3NiA1LjQxN2wtNi41NDggNS4xNDV2LTEwLjI5eiIgZmlsbD0iIzAwMCIvPjwvc3ZnPg=="></a>
+            </slot>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition>

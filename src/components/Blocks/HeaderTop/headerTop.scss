@@ -1,0 +1,59 @@
+@import "src/styles/variables";
+
+.headerTop {
+  position: relative;
+  text-align: center;
+  background-color: $c-yellow;
+  border-bottom: 2px solid black;
+  &-subImg {
+    display: inline-block;
+    margin-top: 96px;
+    margin-bottom: 24px;
+  }
+  &-img {
+    margin-bottom: 24px;
+  }
+  &-button {
+    display: inline-block;
+    margin-bottom: 88px;
+  }
+}
+
+.plants {
+  overflow: hidden;
+  &-left {
+    position: absolute;
+    z-index: 0;
+    left: -220px;
+    top: -510px;
+    animation: plants-left 16s ease-in-out infinite alternate;
+    transform-origin: 0 100%;
+  }
+  &-right {
+    position: absolute;
+    z-index: 0;
+    right: -1100px;
+    top: -420px;
+    animation: plants-right 13s ease-in-out infinite alternate;
+    transform-origin: 0 100%;
+  }
+}
+
+
+@keyframes plants-right {
+  0% {
+    transform: rotate(-75deg) scale(0.9);
+  }
+  100% {
+    transform: rotate(-78deg) scale(0.9);
+  }
+}
+
+@keyframes plants-left {
+  0% {
+    transform: rotate(15deg) scale(0.79);
+  }
+  100% {
+    transform: rotate(18deg) scale(0.79);
+  }
+}

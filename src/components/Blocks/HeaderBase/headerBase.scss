@@ -1,0 +1,101 @@
+@import "src/styles/variables";
+
+
+@include center(1380px);
+
+.header {
+  display: flex;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-bottom: 8px;
+  &-left {
+    width: 16.66667%;
+  }
+  &-right {
+    margin-left: auto;
+  }
+  &-text {
+    max-width: 400px;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.65;
+    @include for-tablet() {
+      display: none;
+    }
+  }
+}
+
+.nav {
+  &-list {
+    display: flex;
+    align-items: center;
+  }
+  &-item {
+    &:not(:last-child) {
+      padding-right: 40px;
+    }
+    > a {
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: #272121;
+    }
+    @include for-phone() {
+      display: none;
+    }
+  }
+  &-toggle {
+    display: none;
+    @include for-phone() {
+      display: block;
+    }
+  }
+}
+
+.cartButton {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  background: #fff;
+  border-color: #b8b19a;
+  color: #a39a7c;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  span {
+    margin-right: 8px;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.navMobile {
+  text-align: center;
+  background: #000;
+  overflow: hidden;
+  &-list {
+    color: #fff;
+    > li {
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 2px;
+      font-weight: 800;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(#fff, 0.25);
+    }
+  }
+}
+
+// Animation
+.fade-enter-active, .fade-leave-active {
+  transition: max-height .45s cubic-bezier(.8, .01, .15, .99);
+}
+.fade-enter, .fade-leave-to {
+  max-height: 0;
+}
+.fade-enter-to, .fade-leave {
+  max-height: 200px
+}
