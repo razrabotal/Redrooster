@@ -2,7 +2,6 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import { LoadingState } from 'src/config/loading-state';
-import Navigation from 'components/Navigation/navigation';
 import Loader from 'components/Loader/loader';
 
 import Cart from 'components/Elements/Cart/cart';
@@ -22,7 +21,6 @@ export const router = new VueRouter({
 new Vue({
   router,
   components: {
-    Navigation,
     Loader,
     Cart
   },
