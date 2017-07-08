@@ -12,7 +12,7 @@ yarn
 
 ![Page](http://sdelal.xyz/video/coffe.jpg)
 
-Видеодемонстрация по ссылке http://sdelal.xyz/#redrooster
+Видеодемонстрация по ссылке http://sdelal.xyz/redrooster.html
 
 # О проекте
 
