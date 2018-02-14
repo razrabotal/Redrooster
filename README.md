@@ -10,9 +10,9 @@ yarn install
 yarn
 ```
 
-![Page](http://sdelal.xyz/video/coffe.jpg)
+![Page](https://taras.top/v/coffe.jpg)
 
-Видеодемонстрация по ссылке http://sdelal.xyz/redrooster.html
+Видеодемонстрация по ссылке https://www.youtube.com/watch?v=u4pJXPfqQJ0
 
 # О проекте
 
