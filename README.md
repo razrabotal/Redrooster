@@ -10,7 +10,7 @@ yarn install
 yarn
 ```
 
-![Page](https://taras.top/v/coffe.jpg)
+![Page](http://taras.top/i/redrooster.jpg)
 
 Видеодемонстрация по ссылке https://www.youtube.com/watch?v=u4pJXPfqQJ0
 
